@@ -2,8 +2,8 @@ import { visibleTestimonials } from '@/data/testimonials'
 import { Reveal } from '../ui/Reveal'
 
 /**
- * Depoimentos de clientes. Sem depoimentos reais, a seção não aparece no site publicado;
- * no desenvolvimento ela mostra textos de exemplo, marcados como tal (veja data/testimonials.ts).
+ * Depoimentos de clientes. Sem depoimentos reais, mostra textos de exemplo, marcados como tal
+ * (veja data/testimonials.ts).
  */
 export function Testimonials() {
   if (visibleTestimonials.length === 0) return null

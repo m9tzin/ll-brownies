@@ -1,8 +1,8 @@
 import type { Testimonial } from './testimonials'
 
 /**
- * TEXTOS DE EXEMPLO, só para ver o layout durante o desenvolvimento.
- * Não são de clientes reais e NÃO entram no site publicado (veja `testimonials.ts`).
+ * TEXTOS DE EXEMPLO, usados enquanto não há depoimentos reais (veja `testimonials.ts`).
+ * Não são de clientes reais; a seção os exibe com a etiqueta "Exemplo".
  */
 export const sampleTestimonials: readonly Testimonial[] = [
   {

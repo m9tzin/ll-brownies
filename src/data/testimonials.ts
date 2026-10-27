@@ -6,7 +6,7 @@ export interface Testimonial {
   author: string
   /** Opcional: cidade, ou o que ela pediu. */
   detail?: string
-  /** `true` = texto de exemplo (não é cliente real). Nunca vai para o site publicado. */
+  /** `true` = texto de exemplo (não é cliente real). A seção mostra a etiqueta "Exemplo". */
   sample?: boolean
 }
 
@@ -19,20 +19,14 @@ export interface Testimonial {
 export const realTestimonials: readonly Testimonial[] = []
 
 /**
- * Só os reais vão para o site publicado. No desenvolvimento (`npm run dev`) entram também os
- * exemplos, marcados como tal, para dar para ver como a seção fica. No build, `import.meta.env.DEV`
- * vira `false` e os exemplos saem do pacote.
+ * Enquanto não houver depoimentos reais, a seção mostra os exemplos, cada um com a etiqueta
+ * "Exemplo, não é cliente real". Assim que `realTestimonials` tiver itens, só eles aparecem.
  */
 export function selectTestimonials(
   real: readonly Testimonial[],
   samples: readonly Testimonial[],
-  isDev: boolean,
 ): readonly Testimonial[] {
-  return real.length > 0 ? real : isDev ? samples : []
+  return real.length > 0 ? real : samples
 }
 
-export const visibleTestimonials = selectTestimonials(
-  realTestimonials,
-  import.meta.env.DEV ? sampleTestimonials : [],
-  import.meta.env.DEV,
-)
+export const visibleTestimonials = selectTestimonials(realTestimonials, sampleTestimonials)
