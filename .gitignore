@@ -1,0 +1,44 @@
+# Dependências
+node_modules/
+
+# Build e cache
+dist/
+dist-ssr/
+coverage/
+.vite/
+.vercel/
+*.tsbuildinfo
+
+# Variáveis de ambiente: o modelo `.env.example` é versionado, o resto não
+.env
+.env.*
+!.env.example
+*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Sistema e editores
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Fotos originais (pesadas): ficam fora do repositório. Use `npm run photos`
+# para gerar os WebP leves em src/assets/photos/.
+photos-originais/
+
+# Ferramentas de apoio
+.superpowers/
