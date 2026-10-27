@@ -14,9 +14,9 @@ export function Testimonials() {
         <Reveal className="mb-14 max-w-3xl">
           <p className="eyebrow mb-5 text-muted">Quem já provou</p>
           <h2 id="titulo-depoimentos" className="display-title text-[clamp(2.25rem,4.8vw,4rem)]">
-            Palavras de quem
+            Quem provou,
             <br />
-            recebeu o saquinho.
+            voltou pra contar.
           </h2>
         </Reveal>
 
