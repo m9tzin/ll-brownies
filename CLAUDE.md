@@ -4,15 +4,6 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Landing page da LL Brownie's (brownies artesanais de Nerópolis, GO). SPA estática sem backend: o "pedido" é montado no navegador e enviado como mensagem de WhatsApp. Todo texto voltado ao usuário, comentários e commits são em português.
 
-## Comandos
-
-```bash
-npx vitest run src/lib/whatsapp.test.ts      # um arquivo de teste
-npx vitest run -t "trecho do nome do teste"  # um teste pelo nome
-```
-
-Copie `.env.example` para `.env.local` e defina `VITE_WHATSAPP_NUMBER`. O deploy é na Vercel.
-
 ## Regras do projeto
 
 - **Brownie sem foto não aparece** no cardápio. O `id` do produto em `data/products.ts` é o nome do arquivo da foto.
