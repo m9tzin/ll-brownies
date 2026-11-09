@@ -10,6 +10,9 @@ export const site = {
   whatsappNumber: import.meta.env.VITE_WHATSAPP_NUMBER || PLACEHOLDER_WHATSAPP,
 } as const
 
+/** Id do celular do topo: a barra "Meu pedido" se esconde enquanto ele está na tela, para não cobri-lo. */
+export const heroPhoneId = 'celular-hero'
+
 /** Horário de pedidos, todos os dias, no fuso de Brasília (horas inteiras). */
 export const storeHours = { open: 9, close: 20, timeZone: 'America/Sao_Paulo' } as const
 

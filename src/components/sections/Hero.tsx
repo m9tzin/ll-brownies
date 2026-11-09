@@ -1,4 +1,4 @@
-import { site } from '@/config/site'
+import { heroPhoneId, site } from '@/config/site'
 import { PhoneMockup } from '../hero/PhoneMockup'
 import { PhoneScreen } from '../hero/PhoneScreen'
 import { ArrowLink } from '../ui/ArrowLink'
@@ -46,7 +46,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="justify-self-center">
+        <div id={heroPhoneId} className="justify-self-center">
           <PhoneMockup>
             <PhoneScreen />
           </PhoneMockup>
