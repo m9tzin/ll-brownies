@@ -14,8 +14,8 @@ export function Hero() {
   return (
     <section aria-labelledby="titulo-hero" className="relative overflow-hidden bg-ink text-paper">
       <div aria-hidden="true" className="absolute inset-0 grid grid-rows-2 md:grid-cols-2 md:grid-rows-1">
-        <Photo name="hero" alt="" priority className="size-full" />
         <Photo name="copo-1" alt="" priority className="size-full" />
+        <Photo name="hero" alt="" priority className="size-full" />
       </div>
 
       {/* sombra em gradiente: o texto à esquerda e o celular à direita ficam legíveis sobre as fotos */}
