@@ -41,6 +41,7 @@
   --animate-sent: sent 0.4s cubic-bezier(0.2, 0.8, 0.3, 1) both;
   --animate-received: received 0.4s cubic-bezier(0.2, 0.8, 0.3, 1) both;
   --animate-typing: typing 1.1s ease-in-out infinite;
+  --animate-bag-out: bag-out 1.6s cubic-bezier(0.3, 0.6, 0.4, 1) both;
 
   /* ilustrações dos cards */
   --animate-drift: drift 7s ease-in-out infinite;
@@ -78,6 +79,14 @@
   @keyframes typing {
     0%, 60%, 100% { opacity: 0.35; transform: translateY(0); }
     30% { opacity: 1; transform: translateY(-4px); }
+  }
+
+  /* saquinho que sai do passo 4: surge, se afasta para a direita e some */
+  @keyframes bag-out {
+    0% { opacity: 0; transform: translate(0px, 8px) scale(0.5) rotate(0deg); }
+    18% { opacity: 1; transform: translate(10px, -6px) scale(1) rotate(-4deg); }
+    70% { opacity: 1; transform: translate(80px, -34px) scale(1) rotate(6deg); }
+    100% { opacity: 0; transform: translate(130px, -60px) scale(0.9) rotate(12deg); }
   }
 
   /* fichas de receita, saquinho e carimbo */
