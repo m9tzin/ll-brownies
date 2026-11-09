@@ -18,7 +18,7 @@ export function PhoneScreen() {
 
   return (
     <div className="flex h-full flex-col bg-cream text-ink">
-      <div className="flex items-center gap-3 bg-ink px-4 pt-8 pb-3 text-paper">
+      <div className="flex items-center gap-3 rounded-t-(--screen-radius) bg-ink px-4 pt-8 pb-3 text-paper">
         <img src="/favicon.svg" alt="" width={36} height={36} fetchPriority="low" className="size-9 rounded-full bg-paper p-1" />
         <div className="leading-tight">
           <p className="display-small text-[0.9375rem]">LL Brownie’s</p>

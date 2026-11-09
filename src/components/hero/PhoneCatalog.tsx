@@ -101,7 +101,7 @@ export function PhoneCatalog({ onViewOrder }: { onViewOrder: () => void }) {
       </div>
 
       {/* barra fixa embaixo: leva ao pedido assim que há itens */}
-      <div className="border-t border-ink/15 bg-paper p-3">
+      <div className="rounded-b-(--screen-radius) border-t border-ink/15 bg-paper p-3">
         {totals.quantity > 0 ? (
           <button type="button" onClick={onViewOrder} className={`${buttonStyles({ variant: 'accent', size: 'xs' })} w-full py-2.5`}>
             Ver pedido · {totals.quantity} {totals.quantity === 1 ? 'item' : 'itens'} · {formatBRL(totals.amount)}

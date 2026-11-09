@@ -90,7 +90,7 @@ export function WhatsAppChat({ onOpenCatalog }: { onOpenCatalog: () => void }) {
       </div>
 
       {/* campo de mensagem: o nome do saquinho */}
-      <form onSubmit={submitName} className="flex items-center gap-2 border-t border-ink/15 bg-paper p-3">
+      <form onSubmit={submitName} className="flex items-center gap-2 rounded-b-(--screen-radius) border-t border-ink/15 bg-paper p-3">
         <label htmlFor="phone-name" className="sr-only">
           Seu nome no saquinho
         </label>
