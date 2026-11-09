@@ -26,7 +26,7 @@ export function Nav() {
     >
       <div className="grid-wrap flex h-16 items-center justify-between">
         <a href="#topo" aria-label="LL Brownie’s: início">
-          <img src={logo} alt="" width={850} height={556} fetchPriority="low" className="h-12 w-auto" />
+          <img src={logo} alt="" width={850} height={556} className="h-12 w-auto" />
         </a>
 
         <nav aria-label="Seções da página" className="max-md:hidden">

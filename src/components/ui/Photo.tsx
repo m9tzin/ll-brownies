@@ -15,6 +15,12 @@ interface PhotoProps {
   imageClassName?: string
 }
 
+/** Prioridade de download: foto do topo primeiro, foto "lazy" a critério do navegador, as demais por último. */
+function fetchPriorityFor(priority: boolean, lazy: boolean) {
+  if (priority) return 'high'
+  return lazy ? 'auto' : 'low'
+}
+
 const MAX_RETRIES = 1
 const RETRY_DELAY_MS = 800
 
@@ -39,7 +45,7 @@ export function Photo({ name, alt, className, priority = false, lazy = false, im
           src={url}
           alt={alt}
           loading={lazy ? 'lazy' : 'eager'}
-          fetchPriority={priority ? 'high' : lazy ? 'auto' : 'low'}
+          fetchPriority={fetchPriorityFor(priority, lazy)}
           decoding="async"
           onError={() => {
             if (attempt < MAX_RETRIES) setTimeout(() => setAttempt((current) => current + 1), RETRY_DELAY_MS)

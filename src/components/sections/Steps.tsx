@@ -11,6 +11,8 @@ const steps = [
 ] as const
 
 const LAST = steps.length - 1
+/** Pausa antes de o primeiro passo acender, quando a seção entra na tela. */
+const START_MS = 300
 const STEP_MS = 1300
 /** Depois do passo 4: tempo para o saquinho sair e sumir antes de a sequência recomeçar. */
 export const HOLD_MS = 2800
@@ -30,7 +32,7 @@ export function Steps() {
 
   useEffect(() => {
     if (!inView || reduced || paused) return
-    const delay = active < 0 ? 300 : active === LAST ? HOLD_MS : STEP_MS
+    const delay = active < 0 ? START_MS : active === LAST ? HOLD_MS : STEP_MS
     const timer = setTimeout(() => setActive(active === LAST ? 0 : active + 1), delay)
     return () => clearTimeout(timer)
   }, [inView, reduced, paused, active])
@@ -116,7 +118,7 @@ export function StepsTrack({ current, inView, reduced, paused }: StepsTrackProps
   )
 }
 
-/** Saquinho de papel que sai do passo 4 em direção ao WhatsApp e some. Decorativo. */
+/** Saquinho de papel que sai do passo 4, sobe para a direita e some. Decorativo. */
 function OutgoingBag({ paused }: { paused: boolean }) {
   return (
     <svg
