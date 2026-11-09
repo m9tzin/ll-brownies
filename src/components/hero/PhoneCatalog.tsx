@@ -33,9 +33,9 @@ export function PhoneCatalog({ onViewOrder }: { onViewOrder: () => void }) {
       <div className="flex-1 overflow-y-auto px-3 pb-4">
         {availableBrownies.length > 0 && (
           <section aria-labelledby="phone-brownies">
-            <h3 id="phone-brownies" className="display-small pt-4 pb-1 text-base">
+            <p id="phone-brownies" className="display-small pt-4 pb-1 text-base">
               Brownies
-            </h3>
+            </p>
             <ul>
               {availableBrownies.map((brownie) => (
                 <li key={brownie.id} className="flex gap-3 border-b border-ink/15 py-3">
@@ -60,9 +60,9 @@ export function PhoneCatalog({ onViewOrder }: { onViewOrder: () => void }) {
         )}
 
         <section aria-labelledby="phone-copos">
-          <h3 id="phone-copos" className="display-small pt-4 pb-2 text-base">
+          <p id="phone-copos" className="display-small pt-4 pb-2 text-base">
             Copos da Felicidade
-          </h3>
+          </p>
           <ul className="mb-2 grid grid-cols-3 gap-1.5">
             {galleryPhotos.map((photo) => (
               <li key={photo.name}>

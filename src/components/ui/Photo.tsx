@@ -39,7 +39,7 @@ export function Photo({ name, alt, className, priority = false, lazy = false, im
           src={url}
           alt={alt}
           loading={lazy ? 'lazy' : 'eager'}
-          fetchPriority={priority ? 'high' : 'auto'}
+          fetchPriority={priority ? 'high' : lazy ? 'auto' : 'low'}
           decoding="async"
           onError={() => {
             if (attempt < MAX_RETRIES) setTimeout(() => setAttempt((current) => current + 1), RETRY_DELAY_MS)

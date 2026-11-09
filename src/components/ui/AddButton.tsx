@@ -29,10 +29,11 @@ export function AddButton({ line, children, variant = 'solid', size = 'sm', clas
       <button
         type="button"
         onClick={handleClick}
-        aria-label={`Adicionar ao pedido: ${line.name}`}
         className={cn(buttonStyles({ variant, size }), 'w-full')}
       >
         {children}
+        {/* o nome acessível começa pelo texto visível do botão e termina com o item */}
+        <span className="sr-only">, {line.name}</span>
       </button>
       {marks.map((id) => (
         <span
