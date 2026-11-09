@@ -4,6 +4,7 @@ import { PhoneScreen } from '../hero/PhoneScreen'
 import { ArrowLink } from '../ui/ArrowLink'
 import { buttonStyles } from '../ui/buttonStyles'
 import { Photo } from '../ui/Photo'
+import { StoreStatus } from '../ui/StoreStatus'
 
 /**
  * Topo: duas fotografias ao fundo e, à frente, um celular onde o pedido é feito numa conversa
@@ -22,6 +23,7 @@ export function Hero() {
 
       <div className="grid-wrap relative grid min-h-[calc(100svh-4rem)] items-center gap-12 py-12 md:grid-cols-[1.1fr_auto] md:gap-16 md:py-14">
         <div className="max-w-3xl">
+          <StoreStatus className="mb-6" />
           <p className="eyebrow mb-5 text-paper/80">
             {site.tagline} · {site.city}
           </p>

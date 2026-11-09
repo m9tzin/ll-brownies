@@ -10,6 +10,9 @@ export const site = {
   whatsappNumber: import.meta.env.VITE_WHATSAPP_NUMBER || PLACEHOLDER_WHATSAPP,
 } as const
 
+/** Horário de pedidos, todos os dias, no fuso de Brasília (horas inteiras). */
+export const storeHours = { open: 9, close: 20, timeZone: 'America/Sao_Paulo' } as const
+
 /** Seções do menu, na ordem em que aparecem na página. */
 export const navLinks = [
   { id: 'historia', label: 'Nossa história' },
