@@ -25,6 +25,19 @@ describe('getStoreStatus', () => {
     expect(getStoreStatus(at(24, 0))).toEqual({ open: false, message: 'Fechado agora, voltamos amanhã às 9h' })
   })
 
+  // hora de Brasília -> mensagem esperada; UTC = Brasília + 3h. Inclui a meia-noite, onde um
+  // formato de hora "24" faria o aviso dizer "voltamos amanhã" em vez de "abrimos hoje".
+  it.each([
+    ['00:00', 3, 0, 'Fechado agora, abrimos hoje às 9h'],
+    ['08:59', 11, 59, 'Fechado agora, abrimos hoje às 9h'],
+    ['09:00', 12, 0, 'Pedidos abertos hoje até as 20h'],
+    ['19:59', 22, 59, 'Pedidos abertos hoje até as 20h'],
+    ['20:00', 23, 0, 'Fechado agora, voltamos amanhã às 9h'],
+    ['23:59', 26, 59, 'Fechado agora, voltamos amanhã às 9h'],
+  ])('às %s em Brasília', (_hora, hourUtc, minute, message) => {
+    expect(getStoreStatus(at(hourUtc, minute)).message).toBe(message)
+  })
+
   it('usa o fuso da loja, não o do visitante', () => {
     // 12:00 UTC é meio-dia em Londres e 09:00 em Brasília: a loja já abriu
     expect(getStoreStatus(at(12), { open: 9, close: 20, timeZone: 'America/Sao_Paulo' }).open).toBe(true)
