@@ -11,16 +11,8 @@ export const faq: readonly FaqItem[] = [
       'Escolha os itens no cardápio, confira a sacola e toque em enviar. A conversa abre no WhatsApp com tudo pronto, e só vai quando você enviar.',
   },
   {
-    question: 'Posso escolher o nome que vai no saquinho?',
-    answer: 'Pode. Escreva no cardápio ou na sacola. O nome vai junto na mensagem do pedido.',
-  },
-  {
     question: 'Quais são os tamanhos dos copos?',
     answer: 'Pequeno por R$ 10 e grande por R$ 20. Todos levam brownie entre as camadas.',
-  },
-  {
-    question: 'Onde vocês ficam?',
-    answer: 'Em Nerópolis, GO.',
   },
 
   // Respostas genéricas: levam o assunto para o WhatsApp em vez de afirmar regras da loja.
